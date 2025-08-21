@@ -33,8 +33,8 @@ public class Tiempo_Memoria {
         Runtime runtime = Runtime.getRuntime();
         long maxDelta = 0;
 
-        for (int j = 0; j < 5; j++) { // tomar varias muestras
-            System.gc(); // sugerir recolección
+        for (int j = 0; j < 5; j++) { 
+            System.gc();
             long memoriaAntes = runtime.totalMemory() - runtime.freeMemory();
 
             for (int i = 0; i < repeticiones; i++) {
@@ -72,7 +72,7 @@ public class Tiempo_Memoria {
         int[] datos = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50,
                        55, 60, 65, 70, 75, 80, 85, 90, 95, 100};
 
-        int repeticiones = 1_000_000; // alto para que se note
+        int repeticiones = 1_000_000; 
 
         try (FileWriter writer = new FileWriter("resultados.csv")) {
             writer.write("n,TiempoRecursivo(ms),MemoriaRecursiva(bytes),TiempoIterativo(ms),MemoriaIterativa(bytes)\n");
